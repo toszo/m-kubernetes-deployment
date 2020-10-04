@@ -20,9 +20,4 @@ RUN apk add --update --no-cache make=4.3-r0 curl &&\
 ARG ARG_M_VERSION="unknown"
 ENV M_VERSION=$ARG_M_VERSION
 
-ARG ARG_HOST_UID=1000
-ARG ARG_HOST_GID=1000
-
-USER $ARG_HOST_UID:$ARG_HOST_GID
-
-ENTRYPOINT ["make"]
+ENTRYPOINT ["kubectl"]
